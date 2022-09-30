@@ -3,14 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MesaComponent } from './mesa/mesa.component';
+import { CartaComponent } from './carta/carta.component';
+import { MazoComponent } from './mazo/mazo.component';
+import { JuegoComponent } from './juego/juego.component';
+import { FormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MesaComponent,
+    CartaComponent,
+    MazoComponent,
+    JuegoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

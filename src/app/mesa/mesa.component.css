@@ -1,0 +1,21 @@
+.mesa-juego{
+    border-radius: 80%;
+    background-color: #1a564b;
+    padding: 15%;
+    height: 90%;
+    width: 100%;
+    border-style: double;
+    box-shadow:
+    10px 10px 30px #3e2e60,   
+    10px  80px 90px #191A19; 
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
+    background-size: 4px 4px;
+}
+.contenedor-cartas{
+    height: 180px; 
+}
+
+.nombre{
+    font-family: 'Bungee Spice', cursive;
+    font-family: 'Reggae One', cursive;
+}

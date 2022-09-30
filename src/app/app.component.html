@@ -1,3 +1,16 @@
 
 
+
+
+<div class="container inicio text-white" *ngIf="inicio">
+    <h1 class="titulo">Bienvenido al Juego de BlackJack!</h1>
+    <br />
+    Ingrese su nombre: <input type="text" name="nombre" [(ngModel)]="nombreJugador"/>
+    <br />
+    <br />
+    <br />
+    <button  (click)="comenzarJuego()" class="btn btn-success">Comenzar Juego</button>
+</div>
+<app-juego [nombreJugador]="nombreJugador" (finalizarJuego)="finalizar($event)" *ngIf="comenzar"></app-juego>
+
 <router-outlet></router-outlet>
