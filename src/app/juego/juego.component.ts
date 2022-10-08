@@ -44,6 +44,7 @@ export class JuegoComponent implements OnInit {
    this.musica.src = "../../../assets/audio/casino_music.mp3";
    this.musica.load();
    this.playAudio();
+   this.elegirCartasCrupier();
   }
 
   silenciar(){
@@ -90,12 +91,17 @@ export class JuegoComponent implements OnInit {
     }
   }
 
-  elegirCartasCrupier(){
+  terminarJugadaCrupier(){
     while(this.jugadaCrupierActiva)
     {
-      
-      let numeroCarta = this.numeroRandom(0, this.listaCartas.length);
-      
+      this.elegirCartasCrupier();
+    }
+  }
+
+
+  elegirCartasCrupier(){
+       
+      let numeroCarta = this.numeroRandom(0, this.listaCartas.length);     
       let idCarta = this.listaCartas[numeroCarta]; 
 
       this.cartasCrupier.push(this.servicioCartas.traerCartaPorId(idCarta));
@@ -105,10 +111,8 @@ export class JuegoComponent implements OnInit {
       if(this.sumaJugadaCrupier >= 17)
       {
         this.jugadaCrupierActiva = false;
-        setTimeout(() => {this.informarGanador();}, 1000)
-        
-      }
-    } 
+        setTimeout(() => {this.informarGanador();}, 1000)       
+      } 
   }
 
   informarGanador(){
@@ -182,7 +186,7 @@ export class JuegoComponent implements OnInit {
         audio.play();
       }
     }
-    if(this.sumaJugada > 21 && this.sumaJugadaCrupier > 21)
+    if((this.sumaJugada > 21 && this.sumaJugadaCrupier > 21) || (this.sumaJugada == 21 && this.sumaJugadaCrupier == 21) || (this.sumaJugada == this.sumaJugadaCrupier))
     {
       Swal.fire({
         title: 'Ha sido un empate',
@@ -194,7 +198,7 @@ export class JuegoComponent implements OnInit {
         background: 'dark'
       });
     }
-   
+
     this.juegoTerminado = true;
   }
 
@@ -220,7 +224,12 @@ export class JuegoComponent implements OnInit {
     
     for(let carta of this.cartasCrupier){
         if(carta.numero == 1)
-          acumulador += 11
+        {
+          if((acumulador + 11) < 21)
+            acumulador += 11;
+          else
+            acumulador += 1;
+        }
         else
           acumulador += carta.numero;    
     }
@@ -229,12 +238,15 @@ export class JuegoComponent implements OnInit {
 
   plantarse(){
     this.jugadaCrupierActiva = true;
-    this.elegirCartasCrupier();
+    this.terminarJugadaCrupier();
   }
 
   seguirJugando(){
     this.limpiarCampos();
+    this.elegirCartasCrupier();
+    this.juegoTerminado = false;
     this.jugadaJugadorActiva = true;
+    this.elegirCartaJugador();
   }
 
   numeroRandom(min: number, max : number) {

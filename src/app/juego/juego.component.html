@@ -1,9 +1,9 @@
 
 
-<div class="container text-white">
+<div class="container text-white ">
     <div class="juego col-12">
         <h1 class="titulo">BlackJack</h1>
-        <app-mesa [nombreJugador]="nombreJugador" [cartasJugador]="cartasJugador" [cartasCrupier]="cartasCrupier"></app-mesa>
+        <app-mesa [sumaJugador]="sumaJugada" [sumaCrupier]="sumaJugadaCrupier" [nombreJugador]="nombreJugador" [cartasJugador]="cartasJugador" [cartasCrupier]="cartasCrupier"></app-mesa>
         <button *ngIf="jugadaJugadorActiva" (click)="elegirCartaJugador()" class="btn btn-ligth" >Pedir Carta</button>
         <button *ngIf="jugadaJugadorActiva" (click)="plantarse()" class="btn btn-danger" style="margin-left: 10px;">Plantarse</button>
         <button *ngIf="!jugadaJugadorActiva" (click)="seguirJugando()" class="btn btn-success" style="margin-left: 10px;">Seguir Jugando</button>

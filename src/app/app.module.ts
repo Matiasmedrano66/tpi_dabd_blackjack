@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MesaComponent } from './mesa/mesa.component';
 import { CartaComponent } from './carta/carta.component';
-import { MazoComponent } from './mazo/mazo.component';
 import { JuegoComponent } from './juego/juego.component';
 import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -15,7 +14,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppComponent,
     MesaComponent,
     CartaComponent,
-    MazoComponent,
     JuegoComponent
   ],
   imports: [

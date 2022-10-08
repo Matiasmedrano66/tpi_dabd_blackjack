@@ -13,12 +13,15 @@ export class MesaComponent implements OnInit {
   @Input() cartasJugador : Carta[] = []
   @Input() cartasCrupier : Carta[] = []
   @Input() nombreJugador : string = ""
+  @Input() sumaJugador : number = 0
+  @Input() sumaCrupier : number = 0
+  
   constructor() { }
 
   ngOnInit(): void {
 
   }
 
- 
+
 
 }

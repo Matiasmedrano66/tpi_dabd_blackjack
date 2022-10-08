@@ -4,3 +4,11 @@
     width: 13%; 
     border-radius: 3%;
 }
+
+@media (max-width: 600px) {
+.carta{
+    width: 20%; 
+    height: 40%; 
+}
+
+}

@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="mesa-juego">
         <div class="contenedor-cartas">
-            <h4 class="nombre">Crupier</h4><app-carta *ngFor="let cartaCrupier of cartasCrupier" [carta]="cartaCrupier"></app-carta> 
+            <h4 class="nombre">Crupier <span class="text-warning">{{sumaCrupier}}</span></h4><app-carta *ngFor="let cartaCrupier of cartasCrupier" [carta]="cartaCrupier"></app-carta> 
         </div>
         <br/>
         <div class="contenedor-cartas">
-            <h4 class="nombre">{{nombreJugador}}</h4><app-carta *ngFor="let carta of cartasJugador" [carta]="carta"></app-carta>
+            <h4 class="nombre">{{nombreJugador}} <span class="text-warning">{{sumaJugador}}</span></h4><app-carta *ngFor="let carta of cartasJugador; let i = index" [carta]="carta"></app-carta>
         </div>
     </div>
 </div>

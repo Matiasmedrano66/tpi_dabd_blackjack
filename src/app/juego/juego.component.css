@@ -9,3 +9,12 @@
     font-family: 'Bungee Spice', cursive;
     width: 100%;
 }
+
+@media (max-width: 600px) {
+   .juego{
+    width: 100%;
+    margin: 0
+   }
+ 
+    
+}
