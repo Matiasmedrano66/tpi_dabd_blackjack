@@ -15,10 +15,7 @@
     height: 180px; 
 }
 
-.nombre{
-    font-family: 'Bungee Spice', cursive;
-    font-family: 'Reggae One', cursive;
-}
+
 
 @media (max-width: 600px) {
     .nombre{

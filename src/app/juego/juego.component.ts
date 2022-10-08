@@ -67,6 +67,7 @@ export class JuegoComponent implements OnInit {
   
   
   llenarListaCartas(){
+    this.listaCartas = [];
     for(let i = 0; i < 52 ; i++){
       this.listaCartas.push(i);
     }
@@ -88,6 +89,12 @@ export class JuegoComponent implements OnInit {
 
       this.listaCartas.splice(numeroCarta, 1);
       this.sumaJugada = this.sumarCartasJugador();
+      if(this.sumaJugada > 21)
+      {
+        this.jugadaCrupierActiva = true;
+        this.terminarJugadaCrupier();
+      }
+
     }
   }
 
@@ -243,9 +250,10 @@ export class JuegoComponent implements OnInit {
 
   seguirJugando(){
     this.limpiarCampos();
-    this.elegirCartasCrupier();
+    this.llenarListaCartas();
     this.juegoTerminado = false;
     this.jugadaJugadorActiva = true;
+    this.elegirCartasCrupier();
     this.elegirCartaJugador();
   }
 
