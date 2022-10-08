@@ -41,7 +41,7 @@ export class JuegoComponent implements OnInit {
     
    this.llenarListaCartas();
    
-   this.musica.src = "../../../assets/audio/casino_music.mp3";
+   this.musica.src = "assets/audio/casino_music.mp3";
    this.musica.load();
    this.playAudio();
    this.elegirCartasCrupier();
@@ -136,7 +136,7 @@ export class JuegoComponent implements OnInit {
         background: 'dark'
       });
       let audio = new Audio();
-        audio.src = "../../../assets/audio/loose.mp3";
+        audio.src = "assets/audio/loose.mp3";
         audio.load();
         audio.play();
     }
@@ -153,7 +153,7 @@ export class JuegoComponent implements OnInit {
       });
   
         let audio = new Audio();
-        audio.src = "../../../assets/audio/win.mp3";
+        audio.src = "assets/audio/win.mp3";
         audio.load();
         audio.play();
 
@@ -172,7 +172,7 @@ export class JuegoComponent implements OnInit {
           background: 'dark'
         });
         let audio = new Audio();
-        audio.src = "../../../assets/audio/win.mp3";
+        audio.src = "assets/audio/win.mp3";
         audio.load();
         audio.play();
       }
@@ -188,7 +188,7 @@ export class JuegoComponent implements OnInit {
           background: 'dark'
         });
         let audio = new Audio();
-        audio.src = "../../../assets/audio/loose.mp3";
+        audio.src = "assets/audio/loose.mp3";
         audio.load();
         audio.play();
       }
